@@ -134,7 +134,6 @@ export const HomePageStyled = styled.main`
       rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
       rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
-
     p {
       color: #382b22;
     }
@@ -144,7 +143,14 @@ export const HomePageStyled = styled.main`
     width: 1rem;
   }
 
-  hr{
+  hr {
     margin: 0 35px;
+  }
+
+  @media screen and (max-device-width: 800px) {
+    .background {
+      height: 100%;
+      width: 100%;
+    }
   }
 `;
