@@ -127,8 +127,8 @@ export const HomePageStyled = styled.main`
     width: 31rem;
     min-height: 4rem;
     border-radius: 10px;
-    padding: 0 35px;
-    margin: 20px 0;
+    padding: 0 2.2rem;
+    margin: 2rem 0;
     background: rgb(236, 236, 236);
     box-shadow: rgba(0, 0, 0, 0.02) 0px 2px 1px,
       rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
@@ -148,8 +148,16 @@ export const HomePageStyled = styled.main`
   }
 
   @media screen and (max-device-width: 800px) {
+    align-items: flex-start;
+    left: 0;
     .background {
-      width: 800px;
+      max-width: 800px;
+      height: 100%;
+      margin-top: 0;
+    }
+    .card{
+          margin: 2rem 0;
+          
     }
   }
 `;

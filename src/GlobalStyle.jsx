@@ -7,4 +7,11 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Signika Negative', sans-serif;
     }
+
+    @media screen and (max-device-width: 800px) {
+    main {
+      height: 100vh;
+      width: 100vw;
+    }
+  }
 `;

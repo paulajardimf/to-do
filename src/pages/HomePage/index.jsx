@@ -92,7 +92,7 @@ export default function HomePage() {
         </section>
         <section>
           <div>
-            <div>
+            <div className="container-card">
               <ul>{renderizaLista}</ul>
             </div>
             <hr />
