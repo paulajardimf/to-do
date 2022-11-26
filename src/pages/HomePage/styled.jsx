@@ -7,8 +7,7 @@ export const HomePageStyled = styled.main`
   justify-content: center;
 
   .background {
-    max-height: 100%;
-    min-height: 35rem;
+    height: 35rem;
     width: 40rem;
     display: flex;
     margin-top: 50px;
