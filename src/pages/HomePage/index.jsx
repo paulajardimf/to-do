@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import deleteIcon from "../../assets/delete.svg";
 import checkIcon from "../../assets/check.svg";
 import { HomePageStyled } from "./styled";
@@ -29,6 +29,7 @@ export default function HomePage() {
     const listaFiltrada = lista.filter((item, index) => index !== indexTarefa);
     setLista(listaFiltrada);
     setListaConcluida([...listaConcluida, itemConcluido]);
+    localStorage.setItem("lista", JSON.stringify((listaFiltrada)))
   };
   const deletaTarefa = (indexTarefa) => {
     const itemADeletar = listaConcluida.filter(
@@ -37,6 +38,7 @@ export default function HomePage() {
     const listaSemItemDeletado = [...listaConcluida];
     listaSemItemDeletado.splice(itemADeletar, 1);
     setListaConcluida([...listaSemItemDeletado]);
+    localStorage.setItem("listaConcluida", JSON.stringify((listaSemItemDeletado)))
   };
 
   const renderizaLista = lista.map((tarefa, index) => {
@@ -49,6 +51,32 @@ export default function HomePage() {
       </li>
     );
   });
+
+  useEffect(() => {
+    if (lista.length > 1) {
+      localStorage.setItem("lista", JSON.stringify(lista));
+    }
+  }, [lista]);
+
+  useEffect(() => {
+    const listaJson = JSON.parse(localStorage.getItem("lista"));
+    if (listaJson) {
+      setLista(listaJson);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (listaConcluida.length > 0) {
+      localStorage.setItem("listaConcluida", JSON.stringify(listaConcluida));
+    }
+  }, [listaConcluida]);
+
+  useEffect(() => {
+    const listaJson = JSON.parse(localStorage.getItem("listaConcluida"));
+    if (listaJson) {
+      setListaConcluida(listaJson);
+    }
+  }, []);
 
   return (
     <HomePageStyled>
