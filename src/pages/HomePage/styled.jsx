@@ -149,8 +149,7 @@ export const HomePageStyled = styled.main`
 
   @media screen and (max-device-width: 800px) {
     .background {
-      height: 100%;
-      width: 100%;
+      width: 800px;
     }
   }
 `;
