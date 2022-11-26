@@ -8,8 +8,8 @@ export const HomePageStyled = styled.main`
 
   .background {
     max-height: 100%;
-    min-height: 600px;
-    width: 600px;
+    min-height: 35rem;
+    width: 40rem;
     display: flex;
     margin-top: 50px;
     flex-direction: column;
@@ -27,7 +27,7 @@ export const HomePageStyled = styled.main`
 
   input {
     border: none;
-    width: 300px;
+    width: 19rem;
     background-color: transparent;
     font-size: 1rem;
     color: #382b22;
